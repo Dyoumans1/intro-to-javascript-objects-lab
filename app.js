@@ -32,7 +32,9 @@ Exercise 3
 Solve Exercise 3 here:
 */
 game.difficulty = ['Story Mode', 'Normal', 'Hardened'];
+game.difficulty = "normal";                  // forgot to choose difficutly upon review
 
+console.log(game.difficulty)
 /*
 Exercise 4
 1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
@@ -58,9 +60,16 @@ Exercise 5
 Solve Exercise 5 here:
 */
 
-game.party.push(pokemon[149]);
-game.party.push(pokemon[24]);
-game.party.push(pokemon[113]);
+// game.party.push(pokemon[149]);
+// game.party.push(pokemon[24]);          // upon review: i took the easy way out and did not do an array method (I chose my favorite pokemon)
+// game.party.push(pokemon[113]);
+
+const favOne = pokemon.filter(pokemon => pokemon.name.includes('Mewtwo'));
+const favTwo = pokemon.filter(pokemon => pokemon.name.includes('Pikachu'));         //found a way around it
+const favThree = pokemon.filter(pokemon => pokemon.name.includes('Tangela'));
+
+game.party.push(favOne[0], favTwo[0], favThree[0]); // (personal note) made arrays so i needed to put their position, which was [0]
+
 
 /*
 Exercise 6
